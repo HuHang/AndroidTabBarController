@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cztek.concept.tabbarcontroller.MainActivity">
+    tools:context="com.cztek.concept.tabbarcontroller.tab_bar.MainActivity">
 
     <com.cztek.concept.uitabbarcontroller.UITabBarController
         android:id="@+id/bottom_bar"

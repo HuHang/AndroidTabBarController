@@ -58,7 +58,7 @@ public class UITabBarController extends LinearLayout {
     //分割线背景
     private int dividerBackgroundColor = Color.parseColor("#CCCCCC");
     //BottomTabBar的整体背景
-    private int tabBarBackgroundColor = Color.parseColor("#FFFFFF");
+    private int tabBarBackgroundColor = Color.parseColor("#F9F9F9");
     //tabId集合
     private List<String> tabIdList = new ArrayList<>();
 
@@ -84,29 +84,29 @@ public class UITabBarController extends LinearLayout {
         TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.BottomTabBar);
         if (attributes != null) {
             //图片宽度
-            imgWidth = attributes.getDimension(R.styleable.BottomTabBar_tab_img_width, 0);
+            imgWidth = attributes.getDimension(R.styleable.BottomTabBar_tab_img_width, 50);
             //图片高度
-            imgHeight = attributes.getDimension(R.styleable.BottomTabBar_tab_img_height, 0);
+            imgHeight = attributes.getDimension(R.styleable.BottomTabBar_tab_img_height, 50);
             //文字尺寸
-            fontSize = attributes.getDimension(R.styleable.BottomTabBar_tab_font_size, 14);
+            fontSize = attributes.getDimension(R.styleable.BottomTabBar_tab_font_size, 12);
             //上边距
-            paddingTop = attributes.getDimension(R.styleable.BottomTabBar_tab_padding_top, dp2px(2));
+            paddingTop = attributes.getDimension(R.styleable.BottomTabBar_tab_padding_top, dp2px(3));
             //图片文字间隔
-            fontImgPadding = attributes.getDimension(R.styleable.BottomTabBar_tab_img_font_padding, dp2px(3));
+            fontImgPadding = attributes.getDimension(R.styleable.BottomTabBar_tab_img_font_padding, dp2px(2));
             //下边距
             paddingBottom = attributes.getDimension(R.styleable.BottomTabBar_tab_padding_bottom, dp2px(5));
             //分割线高度
-            dividerHeight = attributes.getDimension(R.styleable.BottomTabBar_tab_divider_height, dp2px(1));
+            dividerHeight = attributes.getDimension(R.styleable.BottomTabBar_tab_divider_height, 1);
             //是否显示分割线
-            isShowDivider = attributes.getBoolean(R.styleable.BottomTabBar_tab_isShow_divider, false);
+            isShowDivider = attributes.getBoolean(R.styleable.BottomTabBar_tab_isShow_divider, true);
             //选中的颜色
             selectColor = attributes.getColor(R.styleable.BottomTabBar_tab_selected_color, Color.parseColor("#626262"));
             //未选中的颜色
-            unSelectColor = attributes.getColor(R.styleable.BottomTabBar_tab_unselected_color, Color.parseColor("#F1453B"));
+            unSelectColor = attributes.getColor(R.styleable.BottomTabBar_tab_unselected_color, Color.parseColor("#797981"));
             //BottomTabBar的整体背景
-            tabBarBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_bar_background, Color.parseColor("#FFFFFF"));
+            tabBarBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_bar_background, Color.parseColor("#ebebeb"));
             //分割线背景
-            dividerBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_divider_background, Color.parseColor("#CCCCCC"));
+            dividerBackgroundColor = attributes.getColor(R.styleable.BottomTabBar_tab_divider_background, Color.parseColor("#b7b7b7"));
 
             attributes.recycle();
         }
@@ -303,6 +303,10 @@ public class UITabBarController extends LinearLayout {
         return this;
     }
 
+    public UITabBarController setSelectedColor(@ColorInt int selectColor){
+        this.selectColor = selectColor;
+        return this;
+    }
     /**
      * 设置选中未选中的颜色
      * <p>
